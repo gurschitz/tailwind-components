@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+dist
+package-lock.json
+.vscode
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_modern
+.rts2_cache_umd

@@ -1,0 +1,30 @@
+{
+  "name": "tailwind-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.ts",
+  "source": "src/index.ts",
+  "types": "dist/indes.d.ts",
+  "typings": "dist/index.d.ts",
+  "module": "dist/indes.mjs",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "author": "Gerald Urschitz",
+  "license": "MIT",
+  "devDependencies": {
+    "microbundle": "^0.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "tailwindcss": "^1.1.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "tailwindcss": "1.x"
+  }
+}
