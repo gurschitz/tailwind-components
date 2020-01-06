@@ -7,7 +7,7 @@ import buildComponentFunction from "./buildComponentFunction";
  *
  * @returns {TailwindComponents} All tailwind components
  */
-const tailwindComponents = domElements.reduce<TailwindComponents>(
+export const tailwindComponents = domElements.reduce<TailwindComponents>(
   (acc, domElement) => {
     return {
       ...acc,
@@ -16,5 +16,3 @@ const tailwindComponents = domElements.reduce<TailwindComponents>(
   },
   {} as TailwindComponents
 );
-
-export default tailwindComponents;

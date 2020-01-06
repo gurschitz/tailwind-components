@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "target": "es5",
+    "jsx": "react",
     "lib": ["es2019"]
   }
 }

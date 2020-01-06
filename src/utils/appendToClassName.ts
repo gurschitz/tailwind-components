@@ -3,8 +3,8 @@ import { ClassNameSingleType, ClassNameType } from "../types";
 /**
  * This appends the second className to the first className
  *
- * @param {ClassNameType} first
- * @param {ClassNameType} second
+ * @param {ClassNameType} first The first className
+ * @param {ClassNameType} second The second className
  *
  * @return {ClassNameSingleType[]} The result contains both values
  */

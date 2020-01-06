@@ -3,10 +3,17 @@ import { Props, DomElementTypes } from "./types";
 import {
   reduceClassNameToString,
   appendToClassName,
-  reduceStringsAndValues
+  reduceStringsAndValues,
+  addPrefix
 } from "./utils";
 
+interface TailwindConfig {
+  prefix?: string;
+  separator?: string;
+}
+
 type ComponentType<T> = React.ComponentType<T>;
+type DomElementType = keyof DomElementTypes;
 
 type TemplateFunction<T> = (
   strings: TemplateStringsArray,
@@ -21,15 +28,26 @@ export interface TailwindComponent<T> extends React.FunctionComponent<T> {
   className: TemplateFunction<T>;
 }
 
+let config: TailwindConfig;
+
+/**
+ * Allows you to set a fixed config for tailwind.
+ *
+ * @param {TailwindConfig} tailwindConfig
+ */
+export function setTailwindConfig(tailwindConfig: TailwindConfig) {
+  config = tailwindConfig;
+}
+
 /**
  * Higher-order function for building the Tailwind Component for a given element
  *
- * @param {keyof DomElementTypes} element - A valid dom element
+ * @param {DomElementType} element - A valid dom element
  *
  * @returns {TailwindComponent<T>} The tailwind component for the given element
  */
 function buildComponentFunction<T>(
-  element: keyof DomElementTypes
+  element: DomElementType
 ): TailwindComponent<T> {
   const className: TemplateFunction<T> = (strings, ...values) => {
     const templateResult = reduceStringsAndValues(strings, values);
@@ -41,6 +59,12 @@ function buildComponentFunction<T>(
 
   function Component<T>(props: Props<T>) {
     let className = reduceClassNameToString(props.className);
+    if (config) {
+      const { prefix, separator } = config;
+      if (prefix) {
+        className = addPrefix(className, { prefix, separator });
+      }
+    }
     return React.createElement(element, { ...props, className });
   }
 
