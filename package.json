@@ -10,8 +10,12 @@
   "unpkg": "dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "author": "Gerald Urschitz",
   "license": "MIT",
   "devDependencies": {

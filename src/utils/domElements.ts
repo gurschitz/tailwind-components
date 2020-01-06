@@ -1,6 +1,6 @@
 export type DomElementTypes = JSX.IntrinsicElements;
 
-const domElements: (keyof DomElementTypes)[] = [
+export const domElements: (keyof DomElementTypes)[] = [
   "a",
   "abbr",
   "address",
@@ -136,5 +136,3 @@ const domElements: (keyof DomElementTypes)[] = [
   "text",
   "tspan"
 ];
-
-export default domElements;
