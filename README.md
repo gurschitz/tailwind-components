@@ -1,6 +1,6 @@
 # Tailwind Components
 
-A useful little helper library for [tailwindcss](https://tailwindcss.com/).
+A useful little helper library for using [tailwindcss](https://tailwindcss.com/) in React.
 
 ## Example
 
